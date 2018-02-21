@@ -11,8 +11,8 @@ APP = ['nest.py']
 DATA_FILES = []
 
 OPTIONS = {
-'iconfile':'resources/Nest.icns',
-'plist':'resources/Info.plist'
+    'iconfile':'resources/Nest.icns',
+    'plist':'resources/Info.plist'
 }
 
 setup(
