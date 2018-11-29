@@ -26,7 +26,7 @@ class BrowserWindow(wx.Frame):
 		
 		self.widescreen = False
 		
-		#Initially, wx.Frames are not visible
+		# Initially, wx.Frames are not visible
 		self.hidden = True
 		
 		self.openURL()
@@ -52,8 +52,8 @@ class BrowserWindow(wx.Frame):
 		
 		if self.hidden:
 			self.Show()
-			#Alternatively, the window could be shown only on load
-			#self.Bind(wx.html2.EVT_WEBVIEW_LOADED, self.Show, self.browser)
+			# Alternatively, the window could be shown only on load
+			# self.Bind(wx.html2.EVT_WEBVIEW_LOADED, self.Show, self.browser)
 			
 			self.hidden = False
 
@@ -68,12 +68,12 @@ class BrowserWindow(wx.Frame):
 			script = """
 				var width = document.getElementsByTagName("body")[0].offsetWidth / """+stretchRatio+""";
 				document.getElementsByTagName("body")[0].setAttribute('style','-webkit-transform: scaleX("""+stretchRatio+"""); width: '+width+'px; position: absolute; left: -'+(width * (1 - """+stretchRatio+""") / 2)+'px;');
-				"""
+			"""
 		else:
-			#If it is changing from widescreen to normal, remove the style argument
+			# If it is changing from widescreen to normal, remove the style argument
 			script = """
 				document.getElementsByTagName("body")[0].removeAttribute('style');
-				"""
+			"""
 		self.browser.RunScript(script)
 		
 		self.widescreenMenuItem.SetItemLabel('Switch '+('from' if self.widescreen else 'to')+' widescreen mode\tCtrl+T')
@@ -86,7 +86,7 @@ def getScreenSize():
 	screensize = display.GetGeometry()
 	
 	if displayNumber == 0:
-		#Let's not cover up the main screen completely
+		# Let's not cover up the main screen completely
 		scale = 0.75
 		
 		screensize.SetWidth(screensize.GetWidth() * scale)
