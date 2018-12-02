@@ -42,7 +42,7 @@ class BrowserWindow(wx.Frame):
 		
 		dialog.Destroy()
 		
-		if not url.startswith('http://') or url.startswith('https://'):
+		if not url.startswith('http://') and not url.startswith('https://'):
 			url = 'http://'+url
 		
 		self.LoadPage(url)
