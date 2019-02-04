@@ -95,9 +95,10 @@ def getScreenSize():
 		screensize.SetY(screensize.GetY() + screensize.GetHeight() * (1 - scale) / 2)
 	return screensize
 
-app = wx.App()
+if __name__ == '__main__':
+	app = wx.App()
 
-dialog = BrowserWindow(None, -1, style=wx.NO_BORDER)
-dialog.SetRect(getScreenSize())
+	dialog = BrowserWindow(None, -1, style=wx.NO_BORDER)
+	dialog.SetRect(getScreenSize())
 
-app.MainLoop()
+	app.MainLoop()
